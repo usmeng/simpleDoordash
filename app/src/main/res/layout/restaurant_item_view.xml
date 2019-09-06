@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="meng.com.doordash.view.RestaurantViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/restaurant_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_normal_size">
+
+        <ImageView
+            android:id="@+id/restaurant_image"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="@dimen/padding_normal_size"
+            android:layout_marginTop="@dimen/padding_normal_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/restaurant_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_normal_size"
+            android:layout_marginEnd="@dimen/padding_normal_size"
+            android:layout_marginTop="@dimen/padding_normal_size"
+            android:text="@{viewmodel.name}"
+            android:textSize="@dimen/title_normal_size"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/restaurant_image"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Tsing Tao" />
+
+        <TextView
+            android:id="@+id/restaurant_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_normal_size"
+            android:layout_marginEnd="@dimen/padding_normal_size"
+            android:text="@{viewmodel.description}"
+            app:layout_constraintStart_toEndOf="@id/restaurant_image"
+            app:layout_constraintTop_toBottomOf="@id/restaurant_title"
+            tools:text="Soup, Chinese" />
+
+        <TextView
+            android:id="@+id/restaurant_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_normal_size"
+            android:layout_marginEnd="@dimen/padding_normal_size"
+            android:text="@{viewmodel.status}"
+            app:layout_constraintStart_toEndOf="@id/restaurant_image"
+            app:layout_constraintTop_toBottomOf="@id/restaurant_description"
+            tools:text="22 mins" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Discover</string>
+    <string name="san_francisco_lat">37.422740</string>
+    <string name="san_francisco_lng">-122.139956</string>
+    <string name="search">Search</string>
+</resources>
