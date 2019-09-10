@@ -1,6 +1,6 @@
 # Project - *SimpleDoordash*
 
-**SimpleDoordash** search restaurants by location.
+**SimpleDoordash** search restaurants by location. Support location change and restaurant detail page view.
 
 Time spent: **3** hours spent in total
 
@@ -11,10 +11,6 @@ Here's a walkthrough of implemented user stories:
 <img src='https://github.com/usmeng/simpleDoordash/blob/master/screenshots/list.png' title='restaurant list' width='300' alt='restaurant list' />   <img src='https://github.com/usmeng/simpleDoordash/blob/master/screenshots/detail.png' title='restaurant_detail' width='300' alt='restaurant_detail' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
-
-## Notes
-
-Describe any challenges encountered while building the app.
 
 ## Open-source libraries used
 - [RxJava](https://github.com/ReactiveX/RxJava) - a library for composing asynchronous and event-based programs using observable sequences for the Java VM.
