@@ -8,7 +8,7 @@ Time spent: **3** hours spent in total
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/usmeng/doordash/screenshots/list.png' title='restaurant list' width='300' alt='restaurant list' />   <img src='https://github.com/usmeng/doordash/screenshots/detail.png' title='restaurant_detail' width='300' alt='restaurant_detail' />
+<img src='https://github.com/usmeng/simpleDoordash/blob/master/screenshots/list.png' title='restaurant list' width='300' alt='restaurant list' />   <img src='https://github.com/usmeng/simpleDoordash/blob/master/screenshots/detail.png' title='restaurant_detail' width='300' alt='restaurant_detail' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
