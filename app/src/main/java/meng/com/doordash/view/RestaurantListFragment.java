@@ -12,8 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import org.greenrobot.eventbus.EventBus;
-
 import java.util.List;
 
 import meng.com.doordash.data.RestaurantServerModel;
@@ -72,7 +70,17 @@ public class RestaurantListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         restaurantListFragmentBinding = DataBindingUtil.inflate(inflater, R.layout.restaurant_list_fragment, container, false);
-        restaurantListFragmentBinding.gpsSearchButton.setOnClickListener(v -> {
+        restaurantListFragmentBinding.gpsSearchButton.setOnClickListener(getOnSearchClickListener());
+
+        restaurantListAdapter = new RestaurantListAdapter(getContext());
+        restaurantListFragmentBinding.restaurantRecycleview.setLayoutManager(new LinearLayoutManager(getContext()));
+        restaurantListFragmentBinding.restaurantRecycleview.setAdapter(restaurantListAdapter);
+        restaurantListFragmentBinding.restaurantRecycleview.addOnScrollListener(getOnScrollListener());
+        return restaurantListFragmentBinding.getRoot();
+    }
+
+    private View.OnClickListener getOnSearchClickListener() {
+        return v -> {
             locationLAT = restaurantListFragmentBinding.gpsLatEdittext.getText().toString();
             locationLNG = restaurantListFragmentBinding.gpsLngEdittext.getText().toString();
             if (locationLAT.isEmpty() || locationLNG.isEmpty()) {
@@ -82,13 +90,7 @@ public class RestaurantListFragment extends Fragment {
             offset = 0;
             restaurantListAdapter.cleanData();
             fetchData(locationLAT, locationLNG, offset);
-        });
-        restaurantListAdapter = new RestaurantListAdapter(getContext());
-        restaurantListFragmentBinding.restaurantRecycleview.setLayoutManager(new LinearLayoutManager(getContext()));
-        restaurantListFragmentBinding.restaurantRecycleview.setAdapter(restaurantListAdapter);
-        restaurantListFragmentBinding.restaurantRecycleview.addOnScrollListener(getOnScrollListener());
-        restaurantListAdapter.setOnItemClickListener(restaurantViewModel -> EventBus.getDefault().post(new RestaurantDetailEvent(restaurantViewModel)));
-        return restaurantListFragmentBinding.getRoot();
+        };
     }
 
     @NonNull
@@ -103,11 +105,6 @@ public class RestaurantListFragment extends Fragment {
                     }
                 }
             };
-    }
-
-    public interface RestaurantOnItemClickListener {
-
-        void onItemClick(RestaurantViewModel restaurantViewModel);
     }
 
 }

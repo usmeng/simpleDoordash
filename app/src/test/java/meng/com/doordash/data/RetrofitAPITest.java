@@ -16,7 +16,7 @@ public class RetrofitAPITest {
     public void getRestaurants() throws Exception {
         System.out.println("---- getNearbyRestaurants ----");
         ServiceImp api = ServiceImp.getInstance();
-        api.getNearbyRestaurants("37.422740", "-122.139956", 20).subscribe(new SingleObserver<List<RestaurantServerModel>>() {
+        api.getNearbyRestaurants("37.422740", "-122.139956", 20, 0).subscribe(new SingleObserver<List<RestaurantServerModel>>() {
             @Override
             public void onSubscribe(Disposable d) {
                 System.out.println("Disposable: " + d.toString());

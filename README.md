@@ -1,6 +1,6 @@
 # Project - *SimpleDoordash*
 
-**SimpleDoordash** shows the latest movies currently playing in theaters. The app utilizes the Movie Database API to display images and basic information about these movies to the user.
+**SimpleDoordash** search restaurants by location.
 
 Time spent: **3** hours spent in total
 
@@ -8,7 +8,7 @@ Time spent: **3** hours spent in total
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/usmeng/movieDemo/blob/master/movie_list.png' title='movie list' width='300' alt='movie list' />   <img src='https://github.com/usmeng/movieDemo/blob/master/movie_detail.png' title='movie_detail' width='300' alt='movie_detail' />
+<img src='https://github.com/usmeng/doordash/screenshots/list.png' title='restaurant list' width='300' alt='restaurant list' />   <img src='https://github.com/usmeng/doordash/screenshots/detail.png' title='restaurant_detail' width='300' alt='restaurant_detail' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
