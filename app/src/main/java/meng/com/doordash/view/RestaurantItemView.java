@@ -23,9 +23,7 @@ class RestaurantItemView extends RecyclerView.ViewHolder {
 
     public void bind(final RestaurantViewModel restaurantViewModel) {
         binding.setViewmodel(restaurantViewModel);
-        binding.restaurantContainer.setOnClickListener(v -> {
-            EventBus.getDefault().post(new RestaurantDetailEvent(restaurantViewModel));
-        });
+        binding.restaurantContainer.setOnClickListener(v -> EventBus.getDefault().post(new RestaurantDetailEvent(restaurantViewModel)));
         Glide.with(binding.getRoot().getContext()).load(restaurantViewModel.coverImgUrl).into(binding.restaurantImage);
     }
 }
